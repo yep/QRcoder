@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+# QRcoder - QR-Code Generator
 
-You can use the [editor on GitHub](https://github.com/yep/QRcoder/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Easily generate custom QR-Codes (iOS/macOS).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This app is intentionally simple.
 
-### Markdown
+It consists of about only 40 lines of Swift code and thus can be used as a SwiftUI learning resource.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Download
 
-```markdown
-Syntax highlighted code block
+See [Apple AppStore](https://apps.apple.com/us/app/qrcoder-qr-code-encoder/id1545201375)
 
-# Header 1
-## Header 2
-### Header 3
+## License
 
-- Bulleted
-- List
+    QRcoder - QR-Code Generator
+    Copyright (C) 2020 Jahn Bertsch
 
-1. Numbered
-2. List
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-**Bold** and _Italic_ and `Code` text
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yep/QRcoder/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
