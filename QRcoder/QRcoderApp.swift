@@ -1,7 +1,7 @@
 //
 //  QRcoderApp.swift
 //  QRcoder - QR-Code Generator
-//  Copyright (C) 2020 Jahn Bertsch
+//  Copyright (C) 2020-2021 Jahn Bertsch
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by

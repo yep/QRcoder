@@ -13,6 +13,8 @@
 		13D6F741258A4A29007DC4D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6F740258A4A29007DC4D0 /* ContentView.swift */; };
 		13D6F743258A4A2B007DC4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6F742258A4A2B007DC4D0 /* Assets.xcassets */; };
 		13D6F746258A4A2B007DC4D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6F745258A4A2B007DC4D0 /* Preview Assets.xcassets */; };
+		192F5BF226EDE99D009F4D26 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F5BF126EDE99D009F4D26 /* ShareSheet.swift */; };
+		192F5BF426EDF74A009F4D26 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		13D6F745258A4A2B007DC4D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		13D6F747258A4A2B007DC4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D6F74F258A4AD6007DC4D0 /* QRcoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRcoder.entitlements; sourceTree = "<group>"; };
+		192F5BF126EDE99D009F4D26 /* ShareSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				13D6F74F258A4AD6007DC4D0 /* QRcoder.entitlements */,
 				13D6F73E258A4A29007DC4D0 /* QRcoderApp.swift */,
 				13D6F740258A4A29007DC4D0 /* ContentView.swift */,
+				192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */,
+				192F5BF126EDE99D009F4D26 /* ShareSheet.swift */,
 				13D6F742258A4A2B007DC4D0 /* Assets.xcassets */,
 				13D6F747258A4A2B007DC4D0 /* Info.plist */,
 				13D6F744258A4A2B007DC4D0 /* Preview Content */,
@@ -148,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192F5BF426EDF74A009F4D26 /* ContentViewModel.swift in Sources */,
 				13D6F741258A4A29007DC4D0 /* ContentView.swift in Sources */,
 				13D6F73F258A4A29007DC4D0 /* QRcoderApp.swift in Sources */,
+				192F5BF226EDE99D009F4D26 /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -262,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -279,16 +287,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QRcoder/QRcoder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"QRcoder/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QRcoder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.qrcode.QRcoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -304,16 +311,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QRcoder/QRcoder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"QRcoder/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QRcoder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.qrcode.QRcoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

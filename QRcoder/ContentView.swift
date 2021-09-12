@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  QRcoder - QR-Code Generator
-//  Copyright (C) 2020 Jahn Bertsch
+//  Copyright (C) 2020-2021 Jahn Bertsch
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -17,47 +17,69 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-//  Based on https://www.hackingwithswift.com/example-code/media/how-to-create-a-qr-code
-
 import SwiftUI
 
 struct ContentView: View {
-    @State fileprivate var qrText = "Enter QR-Code content here and press \"Generate\" button"
-    @State fileprivate var qrImage = UIImage()
-    
+    @State var viewModel = ContentViewModel()
+
     var body: some View {
         VStack(alignment: .center, spacing: nil, content: {
-            TextEditor(text: $qrText)
+            TextEditor(text: $viewModel.qrText)
                 .border(Color.gray)
                 .padding()
+                .onChange(of: viewModel.qrText, perform: { newValue in
+                    viewModel.generateQrCode()
+                })
                 .onTapGesture {
-                    qrText = ""
+                    viewModel.onTapGesture()
                 }
             
-            Button("Generate QR-Code") {
-                generateQrCode()
+            HStack {
+                Spacer()
+                Button {
+                    resignFirstResponder()
+                    viewModel.saveQrCode()
+                    
+                    #if targetEnvironment(macCatalyst)
+                    presentDocumentPicker()
+                    #else
+                    viewModel.shareSheetPresented = true
+                    #endif
+                } label: {
+                    #if targetEnvironment(macCatalyst)
+                    Text("Save QR-Code")
+                    #else
+                    Image(systemName: "square.and.arrow.up")
+                    #endif
+                }
+                .sheet(isPresented: $viewModel.shareSheetPresented, content: {
+                    ShareSheet(activityItems: [viewModel.qrImageUrl])
+                })
+                Spacer()
             }
             
-            Image(uiImage: qrImage)
+            Image(uiImage: viewModel.qrImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Color.white)
                 .padding()
         })
+        .onAppear {
+            viewModel.generateQrCode()
+        }
+        .onTapGesture {
+            resignFirstResponder()
+        }
     }
     
-    fileprivate func generateQrCode() {
-        let qrData = qrText.data(using: String.Encoding.utf8)
-        if let filter = CIFilter(name: "CIQRCodeGenerator") {
-            filter.setValue(qrData, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 100, y: 100)
-
-            if let outputImage = filter.outputImage?.transformed(by: transform) {
-                let context = CIContext()
-                if let cgImgage = context.createCGImage(outputImage, from: outputImage.extent) {
-                    qrImage = UIImage(cgImage: cgImgage)
-                }
-            }
+    fileprivate func resignFirstResponder() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    fileprivate func presentDocumentPicker() {
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+            let documentPicker = UIDocumentPickerViewController(forExporting: [viewModel.qrImageUrl])
+            rootViewController.present(documentPicker, animated: true)
         }
     }
 }

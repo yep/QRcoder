@@ -1,10 +1,8 @@
 # QRcoder - QR-Code Generator
 
-Easily generate custom QR-Codes (iOS/macOS).
+Easily generate custom QR-Codes.
 
-This app is intentionally simple.
-
-It consists of about only 40 lines of Swift code and thus can be used as a SwiftUI learning resource.
+Allows for sharing (iOS) or saving (macOS) the created QR-Code. 
 
 ## Download
 
@@ -13,7 +11,7 @@ See [Apple AppStore](https://apps.apple.com/us/app/qrcoder-qr-code-encoder/id154
 ## License
 
     QRcoder - QR-Code Generator
-    Copyright (C) 2020 Jahn Bertsch
+    Copyright (C) 2020-2021 Jahn Bertsch
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
