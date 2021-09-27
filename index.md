@@ -4,6 +4,8 @@ Easily generate custom QR codes.
 
 Allows for sharing (iOS) or saving (macOS) the created QR code. 
 
+![preview](https://is3-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/6a/7a/2d/6a7a2db5-502f-2f4d-320c-f6e10a5fad1b/91c53e53-28b8-45fe-a30c-645b1e49a8a5_Bildschirmfoto_2021-09-13_um_08.28.25.png/1286x0w.png)
+
 
 ## Download
 
