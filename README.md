@@ -13,7 +13,7 @@ See [Apple AppStore](https://apps.apple.com/us/app/qrcoder-qr-code-encoder/id154
 ## License
 
     QRcoder - QR-Code Generator
-    Copyright (C) 2020-2021 Jahn Bertsch
+    Copyright (C) 2020-2025 Jahn Bertsch
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

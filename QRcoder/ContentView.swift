@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  QRcoder - QR-Code Generator
-//  Copyright (C) 2020-2021 Jahn Bertsch
+//  Copyright (C) 2020-2025 Jahn Bertsch
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -21,21 +21,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
+    @FocusState var textEditorFocused
 
     var body: some View {
         VStack(alignment: .center, spacing: nil, content: {
             TextEditor(text: $viewModel.qrText)
-                .border(Color.gray)
+                .border(.gray)
                 .padding()
+                .focused($textEditorFocused)
+                .onChange(of: textEditorFocused) { _ in
+                    viewModel.clearDefaultText()
+                }
                 .onChange(of: viewModel.qrText, perform: { newValue in
                     viewModel.generateQrCode()
                 })
-                .onTapGesture {
-                    viewModel.onTapGesture()
-                }
             
             HStack {
                 Spacer()
+                
                 Button {
                     resignFirstResponder()
                     viewModel.saveQrCode()
@@ -46,15 +49,23 @@ struct ContentView: View {
                     viewModel.shareSheetPresented = true
                     #endif
                 } label: {
-                    #if targetEnvironment(macCatalyst)
-                    Text("Save QR-Code")
-                    #else
-                    Image(systemName: "square.and.arrow.up")
-                    #endif
+                    Image(systemName: "square.and.arrow.up").font(.system(size: 30))
                 }
+                .keyboardShortcut("s", modifiers: .command)
                 .sheet(isPresented: $viewModel.shareSheetPresented, content: {
                     ShareSheet(activityItems: [viewModel.qrImageUrl])
                 })
+                
+                Button {
+                    resignFirstResponder()
+                    viewModel.copyToClipboard()
+                    viewModel.alertShown = true
+                } label: {
+                    Image(systemName: "document.on.document").font(.system(size: 30))
+                }
+                .keyboardShortcut("c", modifiers: .command)
+                .padding(.leading, 30)
+                
                 Spacer()
             }
             
@@ -64,11 +75,13 @@ struct ContentView: View {
                 .background(Color.white)
                 .padding()
         })
+        .alert("Copied QR code image to clipboard", isPresented: $viewModel.alertShown) {
+            Button("OK", role: .cancel) {
+                viewModel.alertShown = false
+            }
+        }
         .onAppear {
             viewModel.generateQrCode()
-        }
-        .onTapGesture {
-            resignFirstResponder()
         }
     }
     

@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  QRcoder - QR-Code Generator
-//  Copyright (C) 2020-2021 Jahn Bertsch
+//  Copyright (C) 2020-2025 Jahn Bertsch
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -20,15 +20,19 @@
 import SwiftUI
 
 struct ContentViewModel {
-    fileprivate static let qrTextDefault = "Enter QR-Code content here"
     var qrText = qrTextDefault
     var qrImage = UIImage()
     var qrImageUrl = URL(fileURLWithPath: "")
     var shareSheetPresented = false
-    
-    mutating func onTapGesture() {
-        if qrText == Self.qrTextDefault {
+    var alertShown = false
+
+    fileprivate static let qrTextDefault = "Enter QR-Code content here"
+    fileprivate var defaultTextCleared = false
+
+    mutating func clearDefaultText() {
+        if !defaultTextCleared && qrText == Self.qrTextDefault {
             qrText = ""
+            defaultTextCleared = true
         }
     }
     
@@ -50,9 +54,7 @@ struct ContentViewModel {
     
     mutating func saveQrCode() {
         generateQrCode()
-        
         let documentDirectoryPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        
         guard let pngData = qrImage.pngData(), let documentDirectoryPath = documentDirectoryPaths.first else {
             return
         }
@@ -65,5 +67,10 @@ struct ContentViewModel {
         } catch {
             // print("could not write png: \(error.localizedDescription)")
         }
+    }
+    
+    mutating func copyToClipboard() {
+        generateQrCode()
+        UIPasteboard.general.image = qrImage
     }
 }
