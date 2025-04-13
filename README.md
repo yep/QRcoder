@@ -1,8 +1,9 @@
-# QRcoder - QR-Code Generator
+# QRcoder - QR Code Generator
 
-Easily generate custom QR-Codes.
+Easily generate custom QR codes.
 
-Allows for sharing (iOS) or saving (macOS) the created QR-Code.
+ - Allows for sharing (iOS) or saving (macOS) the created QR code.
+ - Scan QR codes using the camera.
 
 ![preview](https://is3-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/6a/7a/2d/6a7a2db5-502f-2f4d-320c-f6e10a5fad1b/91c53e53-28b8-45fe-a30c-645b1e49a8a5_Bildschirmfoto_2021-09-13_um_08.28.25.png/1286x0w.png)
 
@@ -12,7 +13,7 @@ See [Apple AppStore](https://apps.apple.com/us/app/qrcoder-qr-code-encoder/id154
 
 ## License
 
-    QRcoder - QR-Code Generator
+    QRcoder - QR code Generator
     Copyright (C) 2020-2025 Jahn Bertsch
 
     This program is free software: you can redistribute it and/or modify

@@ -7,28 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012059772EB8D21000470BDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012059762EB8D20E00470BDB /* Constants.swift */; };
+		01EE299B2DA8044300C2AD08 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE299A2DA8044000C2AD08 /* TabsView.swift */; };
+		01EE29D22DA808D100C2AD08 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE29D12DA808CF00C2AD08 /* ScanView.swift */; };
+		01EE29D42DA80AD200C2AD08 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE29D32DA80ACC00C2AD08 /* ScanViewController.swift */; };
 		1370F9C1258A71E40094D43C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1370F9C0258A71E40094D43C /* LICENSE */; };
 		1370F9C8258A96950094D43C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1370F9C7258A96950094D43C /* README.md */; };
 		13D6F73F258A4A29007DC4D0 /* QRcoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6F73E258A4A29007DC4D0 /* QRcoderApp.swift */; };
-		13D6F741258A4A29007DC4D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6F740258A4A29007DC4D0 /* ContentView.swift */; };
+		13D6F741258A4A29007DC4D0 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6F740258A4A29007DC4D0 /* GenerateView.swift */; };
 		13D6F743258A4A2B007DC4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6F742258A4A2B007DC4D0 /* Assets.xcassets */; };
 		13D6F746258A4A2B007DC4D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6F745258A4A2B007DC4D0 /* Preview Assets.xcassets */; };
 		192F5BF226EDE99D009F4D26 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F5BF126EDE99D009F4D26 /* ShareSheet.swift */; };
-		192F5BF426EDF74A009F4D26 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */; };
+		192F5BF426EDF74A009F4D26 /* GenerateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F5BF326EDF74A009F4D26 /* GenerateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012059762EB8D20E00470BDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01EE299A2DA8044000C2AD08 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		01EE29D12DA808CF00C2AD08 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		01EE29D32DA80ACC00C2AD08 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		1370F9C0258A71E40094D43C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1370F9C7258A96950094D43C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		13D6F73B258A4A29007DC4D0 /* QRcoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRcoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D6F73E258A4A29007DC4D0 /* QRcoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcoderApp.swift; sourceTree = "<group>"; };
-		13D6F740258A4A29007DC4D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		13D6F740258A4A29007DC4D0 /* GenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
 		13D6F742258A4A2B007DC4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D6F745258A4A2B007DC4D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		13D6F747258A4A2B007DC4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D6F74F258A4AD6007DC4D0 /* QRcoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRcoder.entitlements; sourceTree = "<group>"; };
 		192F5BF126EDE99D009F4D26 /* ShareSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
-		192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		192F5BF326EDF74A009F4D26 /* GenerateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012059752EB8D20700470BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				012059762EB8D20E00470BDB /* Constants.swift */,
+				192F5BF326EDF74A009F4D26 /* GenerateViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01EE299C2DA8044D00C2AD08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01EE299A2DA8044000C2AD08 /* TabsView.swift */,
+				13D6F740258A4A29007DC4D0 /* GenerateView.swift */,
+				01EE29D12DA808CF00C2AD08 /* ScanView.swift */,
+				192F5BF126EDE99D009F4D26 /* ShareSheet.swift */,
+				01EE29D32DA80ACC00C2AD08 /* ScanViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		13D6F732258A4A29007DC4D0 = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +94,8 @@
 			children = (
 				13D6F74F258A4AD6007DC4D0 /* QRcoder.entitlements */,
 				13D6F73E258A4A29007DC4D0 /* QRcoderApp.swift */,
-				13D6F740258A4A29007DC4D0 /* ContentView.swift */,
-				192F5BF326EDF74A009F4D26 /* ContentViewModel.swift */,
-				192F5BF126EDE99D009F4D26 /* ShareSheet.swift */,
+				01EE299C2DA8044D00C2AD08 /* View */,
+				012059752EB8D20700470BDB /* Model */,
 				13D6F742258A4A2B007DC4D0 /* Assets.xcassets */,
 				13D6F747258A4A2B007DC4D0 /* Info.plist */,
 				13D6F744258A4A2B007DC4D0 /* Preview Content */,
@@ -155,10 +183,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				192F5BF426EDF74A009F4D26 /* ContentViewModel.swift in Sources */,
-				13D6F741258A4A29007DC4D0 /* ContentView.swift in Sources */,
+				01EE299B2DA8044300C2AD08 /* TabsView.swift in Sources */,
+				01EE29D42DA80AD200C2AD08 /* ScanViewController.swift in Sources */,
+				192F5BF426EDF74A009F4D26 /* GenerateViewModel.swift in Sources */,
+				13D6F741258A4A29007DC4D0 /* GenerateView.swift in Sources */,
 				13D6F73F258A4A29007DC4D0 /* QRcoderApp.swift in Sources */,
 				192F5BF226EDE99D009F4D26 /* ShareSheet.swift in Sources */,
+				01EE29D22DA808D100C2AD08 /* ScanView.swift in Sources */,
+				012059772EB8D21000470BDB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,24 +323,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QRcoder/QRcoder.entitlements;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"QRcoder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QRcoder/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.qrcode.QRcoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -319,24 +351,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QRcoder/QRcoder.entitlements;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"QRcoder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QRcoder/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.qrcode.QRcoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

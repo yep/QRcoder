@@ -1,5 +1,5 @@
 //
-//  QRcoderApp.swift
+//  ContentView.swift
 //  QRcoder - QR code Generator
 //  Copyright (C) 2020-2025 Jahn Bertsch
 //
@@ -18,12 +18,23 @@
 //
 
 import SwiftUI
+import NotificationCenter
 
-@main
-struct QRcoderApp: App {
-    var body: some Scene {
-        WindowGroup {
-            TabsView()
+struct Constants {
+    static var iconSize: CGFloat {
+        get {
+            #if targetEnvironment(macCatalyst)
+            return 30
+            #else
+            return 20
+            #endif
         }
     }
 }
+
+extension NSNotification.Name {
+    static let didChangeCamera = NSNotification.Name("didChangeCamera")
+    static let didDetectQRCode = NSNotification.Name("didDetectQRCode")
+}
+
+

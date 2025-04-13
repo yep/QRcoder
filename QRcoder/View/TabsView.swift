@@ -1,5 +1,5 @@
 //
-//  QRcoderApp.swift
+//  TabsView.swift
 //  QRcoder - QR code Generator
 //  Copyright (C) 2020-2025 Jahn Bertsch
 //
@@ -19,11 +19,22 @@
 
 import SwiftUI
 
-@main
-struct QRcoderApp: App {
-    var body: some Scene {
-        WindowGroup {
-            TabsView()
-        }
+struct TabsView: View {
+    var body: some View {
+        TabView {
+            GenerateView()
+            .tabItem {
+                Label("Generate", systemImage: "qrcode")
+            }
+            
+            ScanView()
+            .tabItem {
+                Label("Scan", systemImage: "camera")
+            }
+        }.tint(.orange)
     }
+}
+
+#Preview(traits: .fixedLayout(width: 200, height: 400)) {
+    TabsView()
 }

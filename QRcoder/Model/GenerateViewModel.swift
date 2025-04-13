@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  QRcoder - QR-Code Generator
+//  QRcoder - QR code Generator
 //  Copyright (C) 2020-2025 Jahn Bertsch
 //
 //  This program is free software: you can redistribute it and/or modify
@@ -19,14 +19,15 @@
 
 import SwiftUI
 
-struct ContentViewModel {
+struct GenerateViewModel {
     var qrText = qrTextDefault
     var qrImage = UIImage()
     var qrImageUrl = URL(fileURLWithPath: "")
     var shareSheetPresented = false
     var alertShown = false
+    var fullScreenCover = false
 
-    fileprivate static let qrTextDefault = "Enter QR-Code content here"
+    fileprivate static let qrTextDefault = "Enter QR code content here"
     fileprivate var defaultTextCleared = false
 
     mutating func clearDefaultText() {
@@ -36,26 +37,30 @@ struct ContentViewModel {
         }
     }
     
-    mutating func generateQrCode() {
+    mutating func generateQrCode(scale: CGFloat = 100) -> UIImage? {
         // Based on https://www.hackingwithswift.com/example-code/media/how-to-create-a-qr-code
         let qrData = qrText.data(using: String.Encoding.utf8)
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(qrData, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 100, y: 100)
+            let transform = CGAffineTransform(scaleX: scale, y: scale)
             
             if let outputImage = filter.outputImage?.transformed(by: transform) {
                 let context = CIContext()
                 if let cgImgage = context.createCGImage(outputImage, from: outputImage.extent) {
-                    qrImage = UIImage(cgImage: cgImgage)
+                    return UIImage(cgImage: cgImgage)
                 }
             }
         }
+        
+        return nil
     }
     
     mutating func saveQrCode() {
-        generateQrCode()
+        let qrImage = generateQrCode(scale: 10)
         let documentDirectoryPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        guard let pngData = qrImage.pngData(), let documentDirectoryPath = documentDirectoryPaths.first else {
+        guard let pngData = qrImage?.pngData(),
+              let documentDirectoryPath = documentDirectoryPaths.first else
+        {
             return
         }
         
@@ -70,7 +75,6 @@ struct ContentViewModel {
     }
     
     mutating func copyToClipboard() {
-        generateQrCode()
-        UIPasteboard.general.image = qrImage
+        UIPasteboard.general.image = generateQrCode(scale: 10)
     }
 }
